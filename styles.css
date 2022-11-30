@@ -1,0 +1,450 @@
+:root {
+    --dark-text: hsl(229, 25%, 31%);
+    --score-text: hsl(229, 64%, 46%);
+    --header-outline: hsl(217, 16%, 45%);
+    --paper: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    --scissors: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    --rock: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+html {
+    font-size: 15px;
+    width: 100vw;
+    height: 100vh;
+}
+body {
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%)) no-repeat;
+}
+button {
+    cursor: pointer;
+}
+/* Header */
+header {
+    width: 90%;
+    height: 8rem;
+    margin-top: 3rem;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid var(--header-outline);
+}
+header img {
+    height: 5rem;
+}
+header > div {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--score-text);
+    text-transform: uppercase;
+}
+.score {
+    font-size: 3.5rem;
+    line-height: 3rem;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+/* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    position: relative;
+    margin: 3rem 0;
+}
+section.layout {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 3.5rem;
+    position: relative;
+}
+.layout .poses .whole {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+} 
+.layout .poses .whole .triangle {
+    position: absolute;
+    width: 12rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 3rem;
+}
+.layout .poses .whole > div {
+    margin: 0 1rem;
+    border-radius: 50%;
+    width: 6.5rem;
+    height: 6.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    cursor: pointer;
+}
+.layout .poses .whole > div > img {
+    background-color: white;
+    border-radius: 50%;
+    padding: 1rem 1.25rem;
+    width: 5rem;
+    height: 5rem;
+    box-shadow: inset 0 3px 0 2px hsla(214, 47%, 38%, 0.2);
+}
+.paper {
+    background: var(--paper);
+}
+.scissors {
+    background: var(--scissors);
+}
+.rock {
+    background: var(--rock);
+}
+.layout .poses .rival {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5rem;
+    transition: all 0.3s ease;
+    display: none;
+}
+.layout .poses .rival > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    letter-spacing: 0.06rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    gap: 1rem;
+}
+.layout .poses .rival > article > div {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(238, 48%, 15%, 0.225);
+}
+.pose2-img {
+    display: none;
+}
+.pose1::after {
+    content: '';
+    position: absolute;
+    width: 8.8rem;
+    height: 8.8rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    z-index: -1;
+    transition: all 0.3s ease;
+    display: none;
+}
+.pose1::before {
+    content: '';
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    z-index: -2;
+    transition: all 0.3s ease;
+    display: none;
+}
+.pose1.shown::after {
+    display: block;
+}
+.pose1.shown::before {
+    display: block;
+}
+.layout .poses .rival > article > div > div {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.layout .poses .rival > article > div > div > img {
+    background-color: white;
+    border-radius: 50%;
+    padding: 1rem 1.25rem;
+    width: 5rem;
+    height: 5rem;
+    box-shadow: inset 0 3px 0 2px hsla(214, 47%, 38%, 0.2);
+}
+
+.layout .result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    width: 15rem;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+    display: none;
+}
+.layout .result h2 {
+    letter-spacing: 0.03rem;
+    font-weight: 700;
+    font-size: 3.3rem;
+}
+.layout .result > button {
+    text-transform: uppercase;
+    width: 95%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    border: none;
+    letter-spacing: 0.06rem;
+    color: var(--dark-text);
+    background-color: white;
+}
+
+button.rules {
+    width: 7rem;
+    height: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+    border-radius: 0.6rem;
+    border: solid 1.5px white;
+    background-color: transparent;
+    color: white;
+    position: fixed;
+    bottom: 5rem;
+}
+section.rules-content {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    padding-top: 5rem;
+    z-index: 5;
+    display: none;
+}
+section.rules-content img.method {
+    width: 80%;
+}
+section.rules-content img.close {
+    position: fixed;
+    bottom: 3rem;
+    width: 1.6rem;
+    cursor: pointer;
+}
+
+
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    header {
+        width: 60%;
+    }
+    header img {
+        width: 7rem;
+    }
+    header > div {
+        width: 7rem;
+    }
+    .layout .poses .whole {
+        width: 70%;
+        margin: auto;
+    } 
+    .layout .poses .whole .triangle {
+        width: 60%;
+        height: 15rem;
+        top: 5rem;
+    }
+    .layout .poses .whole > div {
+        margin: 0 2rem;
+        width: 10rem;
+        height: 10rem;
+    }
+    .layout .poses .whole > div > img {
+        padding: 1.3rem 1.8rem;
+        width: 8rem;
+        height: 8rem;
+        box-shadow: inset 0 5px 0 2px hsla(214, 47%, 38%, 0.2);
+    }
+    .layout .poses .rival {
+        margin-top: 2rem;
+        gap: 5rem;
+        display: none;
+    }
+    .layout .poses .rival > article {
+        font-size: 1rem;
+        gap: 2rem;
+    }
+    .layout .poses .rival > article > div {
+        order: 2;
+        width: 12rem;
+        height: 12rem;
+    }
+    .pose1::after {
+        width: 16rem;
+        height: 16rem;
+        display: none;
+    }
+    .pose1::before {
+        width: 21rem;
+        height: 21rem;
+        display: none;
+    }
+    .layout .poses .rival > article > div > div {
+        width: 12rem;
+        height: 12rem;
+    }
+    .layout .poses .rival > article > div > div > img {
+        padding: 1.3rem 1.8rem;
+        width: 9.5rem;
+        height: 9.5rem;
+        box-shadow: inset 0 5px 0 2px hsla(214, 47%, 38%, 0.2);
+    }
+    .layout .result {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 9rem;
+        display: none;
+    }
+    .layout .result h2 {
+        letter-spacing: 0.03rem;
+    }
+    .layout .result > button {
+        width: 80%;
+    }
+    button.rules {
+        width: 8rem;
+        letter-spacing: 0.1rem;
+        position: fixed;
+        bottom: 4rem;
+        right: 5%;
+    }
+    section.rules-content {
+        width: 25rem;
+        height: 25rem;
+        padding: 2rem 4rem;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        gap: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0 50rem rgba(0, 0, 0, 0.4);
+        display: none;
+    }
+    section.rules-content h1 {
+        margin-left: -14rem;
+    }
+    section.rules-content img.method {
+        width: 100%;
+        height: 70%;
+    }
+    section.rules-content img.close {
+        position: relative;
+        margin-top: -18rem;
+        margin-left: 19rem;
+        width: 1rem;
+    }
+}
+
+@media (min-width: 1300px) {
+    html {
+        font-size: 17px;
+    }
+    header {
+        width: 40%;
+    }
+    header img {
+        width: 8rem;
+    }
+    header > div {
+        width: 8rem;
+    }
+    .layout .poses .whole {
+        width: 45%;
+    } 
+    .layout .poses .whole .triangle {
+        top: 4rem;
+    }
+    .layout .poses .whole > div {
+        margin: 0 3rem;
+        width: 11rem;
+        height: 11rem;
+    }
+    .layout .poses .whole > div > img {
+        width: 9rem;
+        height: 9rem;
+    }
+    .layout .poses .rival > article > div {
+        width: 13rem;
+        height: 13rem;
+    }
+    .pose1::after {
+        width: 17rem;
+        height: 17rem;
+        display: none;
+    }
+    .pose1::before {
+        width: 22rem;
+        height: 22rem;
+        display: none;
+    }
+    .layout .poses .rival > article > div > div {
+        width: 13rem;
+        height: 13rem;
+    }
+    .layout .poses .rival > article > div > div > img {
+        width: 10rem;
+        height: 10rem;
+    }
+    .layout .result {
+        top: 10rem;
+        display: none;
+    }
+    .layout .result h2 {
+        letter-spacing: 0.04rem;
+    }
+    .layout .result > button {
+        width: 85%;
+    }
+}

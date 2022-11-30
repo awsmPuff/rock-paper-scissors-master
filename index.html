@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <img src="./images/logo.svg" alt="logo">
+    <div>
+      <p>score</p>
+      <h1 class="score">0</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="layout">
+      <div class="poses">
+        <div class="whole">
+          <img class="triangle" src="./images/bg-triangle.svg" alt="triangle">
+          <div class="paper">
+            <img class="paper-img" src="./images/icon-paper.svg" alt="paper">
+          </div>
+          <div class="scissors">
+            <img class="scissors-img" src="./images/icon-scissors.svg" alt="scissors">
+          </div>
+          <div class="rock">
+            <img class="rock-img" src="./images/icon-rock.svg" alt="rock">
+          </div>
+        </div>
+          
+        <div class="rival">
+          <article class="first">
+            <div class="pose1 effect">
+              <div class="pose1-content">
+                <img class="pose1-img" src="" alt="">
+              </div>
+            </div>
+            <p>You Picked</p>
+          </article>
+          <article class="second">
+            <div class="pose2">
+              <div class="pose2-content">
+                <img class="pose2-img" src="" alt="">
+              </div>
+            </div>
+            <p>The House Picked</p>
+          </article>
+        </div>
+      </div>
+      <div class="result">
+        <h2 class="comment"></h2>
+        <button class="restart">Play Again</button>
+      </div>
+    </section>
+    <button class="rules">Rules</button>
+  </main>
+  <section class="rules-content">
+    <h1>Rules</h1>
+    <img class="method" src="./images/image-rules.svg" alt="rules">
+    <img class="close" src="./images/icon-close.svg" alt="close">
+  </section>
+
+  
+ <script src="./script.js"></script>
+</body>
+</html>
