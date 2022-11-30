@@ -27,13 +27,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/active.png)
+![](./screenshots/active.gif)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/awsmPuff/rock-paper-scissors-master](https://your-solution-url.com)
+- Live Site URL: [https://awsmpuff.github.io/rock-paper-scissors-master/](https://your-live-site-url.com)
 
 ## My process
 
