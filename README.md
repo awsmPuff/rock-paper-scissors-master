@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/awsmPuff/rock-paper-scissors-master](https://your-solution-url.com)
-- Live Site URL: [https://awsmpuff.github.io/rock-paper-scissors-master/](https://your-live-site-url.com)
+- Solution URL: [https://github.com/awsmPuff/rock-paper-scissors-master](https://github.com/awsmPuff/rock-paper-scissors-master)
+- Live Site URL: [https://awsmpuff.github.io/rock-paper-scissors-master/](https://awsmpuff.github.io/rock-paper-scissors-master/)
 
 ## My process
 
